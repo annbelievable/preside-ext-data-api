@@ -28,6 +28,7 @@
 			} else {
 				if ( subj == "all" ) {
 					$tr.find( "input[data-cat='" + cat + "']" ).prop( "checked", checked );
+					$table.find( "tr.all input[data-cat='" + cat + "']" ).prop( "checked", checked );
 				} else if ( !checked ) {
 					$tr.find( "input[data-cat='" + cat + "'][data-subj='all']" ).prop( "checked", checked );
 					$table.find( "tr.all input[data-cat='" + cat + "'][data-subj='" + subj + "']" ).prop( "checked", checked );

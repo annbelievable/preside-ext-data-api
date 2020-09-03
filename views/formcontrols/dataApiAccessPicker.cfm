@@ -56,36 +56,36 @@
 				<cfloop array="#entities#" index="i" item="entity">
 					<tr class="entity">
 						<th><i class="fa fa-fw fa-angle-double-right light-grey"></i> <code>/#entity#</code></th>
-						<td class="stand first"><input type="checkbox" value="1" data-subj="all"    data-cat="standard" name="#HtmlEditFormat( entity )#_all" class="all"<cfif _isChecked( "#entity#_all" )> checked</cfif>></td>
-						<td class="stand"><input type="checkbox" value="1" data-subj="read"   data-cat="standard" name="#HtmlEditFormat( entity )#_read"<cfif _isChecked( "#entity#_read" )> checked</cfif>></td>
-						<td class="stand"><input type="checkbox" value="1" data-subj="insert" data-cat="standard" name="#HtmlEditFormat( entity )#_insert"<cfif _isChecked( "#entity#_insert" )> checked</cfif>></td>
-						<td class="stand"><input type="checkbox" value="1" data-subj="update" data-cat="standard" name="#HtmlEditFormat( entity )#_update"<cfif _isChecked( "#entity#_update" )> checked</cfif>></td>
-						<td class="stand"><input type="checkbox" value="1" data-subj="delete" data-cat="standard" name="#HtmlEditFormat( entity )#_delete"<cfif _isChecked( "#entity#_delete" )> checked</cfif>></td>
+						<td class="stand first"><input type="checkbox" value="1" data-subj="all"    data-cat="standard" name="#HtmlEditFormat( entity )#_all" class="all"<cfif _isChecked( "all_all") OR _isChecked( "#entity#_all" )> checked</cfif>></td>
+						<td class="stand"><input type="checkbox" value="1" data-subj="read"   data-cat="standard" name="#HtmlEditFormat( entity )#_read"<cfif _isChecked( "all_read" ) OR _isChecked( "#entity#_read" )> checked</cfif>></td>
+						<td class="stand"><input type="checkbox" value="1" data-subj="insert" data-cat="standard" name="#HtmlEditFormat( entity )#_insert"<cfif _isChecked( "all_insert" ) OR _isChecked( "#entity#_insert" )> checked</cfif>></td>
+						<td class="stand"><input type="checkbox" value="1" data-subj="update" data-cat="standard" name="#HtmlEditFormat( entity )#_update"<cfif _isChecked( "all_update" ) OR _isChecked( "#entity#_update" )> checked</cfif>></td>
+						<td class="stand"><input type="checkbox" value="1" data-subj="delete" data-cat="standard" name="#HtmlEditFormat( entity )#_delete"<cfif _isChecked( "all_delete" ) OR _isChecked( "#entity#_delete" )> checked</cfif>></td>
 						<cfif queueEnabled>
 							<td class="queue first">
 								<cfif allEntities[ entity ].allowQueue>
-									<input type="checkbox" value="1" data-subj="all"    data-cat="queue"    name="#HtmlEditFormat( entity )#_queue_all"<cfif _isChecked( "#entity#_queue_all" )> checked</cfif>>
+									<input type="checkbox" value="1" data-subj="all"    data-cat="queue"    name="#HtmlEditFormat( entity )#_queue_all"<cfif _isChecked( "all_queue_all" ) OR _isChecked( "#entity#_queue_all" )> checked</cfif>>
 								<cfelse>
 									&nbsp;
 								</cfif>
 							</td>
 							<td class="queue">
 								<cfif allEntities[ entity ].allowQueue>
-									<input type="checkbox" value="1" data-subj="insert" data-cat="queue"    name="#HtmlEditFormat( entity )#_queue_insert"<cfif _isChecked( "#entity#_queue_insert" )> checked</cfif>>
+									<input type="checkbox" value="1" data-subj="insert" data-cat="queue"    name="#HtmlEditFormat( entity )#_queue_insert"<cfif _isChecked( "all_queue_insert" ) OR _isChecked( "#entity#_queue_insert" )> checked</cfif>>
 								<cfelse>
 									&nbsp;
 								</cfif>
 							</td>
 							<td class="queue">
 								<cfif allEntities[ entity ].allowQueue>
-									<input type="checkbox" value="1" data-subj="update" data-cat="queue"    name="#HtmlEditFormat( entity )#_queue_update"<cfif _isChecked( "#entity#_queue_update" )> checked</cfif>>
+									<input type="checkbox" value="1" data-subj="update" data-cat="queue"    name="#HtmlEditFormat( entity )#_queue_update"<cfif _isChecked( "all_queue_update" ) OR _isChecked( "#entity#_queue_update" )> checked</cfif>>
 								<cfelse>
 									&nbsp;
 								</cfif>
 							</td>
 							<td class="queue">
 								<cfif allEntities[ entity ].allowQueue>
-									<input type="checkbox" value="1" data-subj="delete" data-cat="queue"    name="#HtmlEditFormat( entity )#_queue_delete"<cfif _isChecked( "#entity#_queue_delete" )> checked</cfif>>
+									<input type="checkbox" value="1" data-subj="delete" data-cat="queue"    name="#HtmlEditFormat( entity )#_queue_delete"<cfif _isChecked( "all_queue_delete" ) OR _isChecked( "#entity#_queue_delete" )> checked</cfif>>
 								<cfelse>
 									&nbsp;
 								</cfif>
